@@ -10,6 +10,7 @@ class Program
         ReturnList(UserList);
     }
 
+    /* Beginning assignment */
     static List<int> UserInput()
     {
         List<int>UserList = new List<int>();
@@ -26,6 +27,7 @@ class Program
         }while (input != 0);
         return UserList;
     }
+
     static void ReturnList(List<int> numbers)
     {
         Console.WriteLine(" Your list contains the following: ");
@@ -34,5 +36,42 @@ class Program
             Console.WriteLine(number);
         }
     }
+
+    /* Core requirement 1 summation of numbers */
+    static int  FindSum(List<int> numbers)
+    {
+        int sum = 0;
+        foreach (int number in numbers)
+        {
+            sum += number;
+        }
+        return sum;
+
+    }
+
+    /* Core Requirement 2 averaging numbers */
+    static decimal ComputeAvg (List<int> numbers)
+    {
+        if (numbers.Count == 0)
+            return 0;
+        decimal sum = FindSum(numbers);
+        return sum / numbers.Count;
+
+    }
+
+    /* Core requirement 3 largest number */
+    static int MaxNum(List<int> numbers)
+    {
+        int max = int.MinValue;
+        foreach (int number in numbers)
+        {
+            if (number > max)
+            {
+                max = number;
+            }
+        }
+        return max;
+    }
+
 
 }
