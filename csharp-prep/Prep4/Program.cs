@@ -10,7 +10,7 @@ class Program
         ReturnList(UserList);
     }
 
-    static List<int>UserInput()
+    static List<int> UserInput()
     {
         List<int>UserList = new List<int>();
         int input;
@@ -23,13 +23,13 @@ class Program
             {
                 UserList.Add(input);
             }
-        }While (input != 0);
+        }while (input != 0);
         return UserList;
     }
     static void ReturnList(List<int> numbers)
     {
         Console.WriteLine(" Your list contains the following: ");
-        foreach (int number in mumbers)
+        foreach (int number in numbers)
         {
             Console.WriteLine(number);
         }
