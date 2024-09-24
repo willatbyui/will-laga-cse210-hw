@@ -29,12 +29,12 @@ class Program
         return UserList;
     
     }
-    static void ReturnList(List<int> numbers)
+    static void ReturnList(List<int> UserList)
     {
         Console.WriteLine( "Your list contains the following numbers: ");
-        foreach (int number in numbers)
+        foreach (int input in UserList)
         {
-            Console.WriteLine(number);
+            Console.WriteLine(input);
         }
     }
 
