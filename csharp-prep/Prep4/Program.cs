@@ -25,9 +25,9 @@ class Program
                 UserList.Add(input);
             }
         } while (input != 0)
-        {
-            return UserList;
-        }
+        
+        return UserList;
+    
     }
     static void ReturnList(List<int> numbers)
     {
