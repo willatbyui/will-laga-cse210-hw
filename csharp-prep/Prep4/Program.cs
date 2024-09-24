@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Will\'s Prep4 assignment")
+        Console.WriteLine("Will\'s Prep4 assignment");
         List<int> UserList = UserInput();
         ReturnList(UserList);
     }
