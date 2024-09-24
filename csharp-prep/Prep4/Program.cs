@@ -5,36 +5,33 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Will\'s Prep4 assignment. ");
+        Console.WriteLine("Will\'s Prep4 assignment")
         List<int> UserList = UserInput();
         ReturnList(UserList);
     }
 
-    static List<int> UserInput()
+    static List<int>UserInput()
     {
-        List<int> UserList = new List<int>();
+        List<int>UserList = new List<int>();
         int input;
-
         do
         {
-            Console.WriteLine("Enter Numbers here: ");
+            Console.WriteLine("Enter numbers here: ");
             input = int.Parse(Console.ReadLine());
-
+            
             if (input != 0)
             {
                 UserList.Add(input);
             }
-        } while (input != 0)
-        
+        }While (input != 0);
         return UserList;
-    
     }
-    static void ReturnList(List<int> UserList)
+    static void ReturnList(List<int> numbers)
     {
-        Console.WriteLine( "Your list contains the following numbers: ");
-        foreach (int input in UserList)
+        Console.WriteLine(" Your list contains the following: ");
+        foreach (int number in mumbers)
         {
-            Console.WriteLine(input);
+            Console.WriteLine(number);
         }
     }
 
