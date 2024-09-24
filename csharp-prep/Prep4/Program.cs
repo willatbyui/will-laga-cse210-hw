@@ -8,6 +8,16 @@ class Program
         Console.WriteLine("Will\'s Prep4 assignment");
         List<int> UserList = UserInput();
         ReturnList(UserList);
+
+        /* displaying results of each function on the console */
+        int sum = FindSum(UserList);
+        Console.WriteLine($"The sum of your numbers is : {sum}. ");
+
+        decimal average = ComputeAvg(UserList);
+        Console.WriteLine($"n\ The average of your numbers is: {average}. ");
+
+        int max = MaxNum(UserList);
+        Console.WriteLine($"The largest number is: {max}. ");
     }
 
     /* Beginning assignment */
