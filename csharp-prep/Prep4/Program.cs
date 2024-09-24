@@ -11,12 +11,12 @@ class Program
 
         /* displaying results of each function on the console */
         int sum = FindSum(UserList);
-        Console.WriteLine($"The sum of your numbers is : {sum}. ");
+        Console.WriteLine($"The sum of your numbers is: {sum}. ");
 
         decimal average = ComputeAvg(UserList);
-        Console.WriteLine($"n\ The average of your numbers is: {average}. ");
+        Console.WriteLine($"The average of your numbers is: {average}. ");
 
-        int max = MaxNum(UserList);
+        decimal max = MaxNum(UserList);
         Console.WriteLine($"The largest number is: {max}. ");
     }
 
