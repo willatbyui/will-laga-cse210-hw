@@ -14,8 +14,7 @@ class Program
     {
         List<int> UserList = new List<int>();
         int input;
-        
-        int input;
+
         do
         {
             Console.WriteLine("Enter Numbers here: ");
