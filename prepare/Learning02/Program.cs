@@ -5,6 +5,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning02 World!");
+
+        /* Creation of jobs for the resume */
+
+        Job job1 = new Job();
+        job1._jobTitle = "Software Engineer";
+
+
     }
 }
