@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 
 
@@ -16,7 +14,8 @@ public class Job
 
 
 /* Displays job information in specified format */
-    public void DisplayInformation(){
-        Console.WriteLine($"{_jobTitle}, {_company}. {_startYear}-{_endYear}.\n");
+    public void Display()
+    {
+        Console.WriteLine($"{_jobTitle}, ({_company}). {_startYear}-{_endYear}.\n");
     }
 }
