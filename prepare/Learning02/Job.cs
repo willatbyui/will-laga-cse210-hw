@@ -1,5 +1,6 @@
 using System;
-
+using System.IO.Compression;
+using System.Data;
 
 
 /* Keep track of company, job title, start, and end year. */
