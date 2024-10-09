@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        Console.WriteLine("Will\'s Develop 02 assignment. ");
+        Console.WriteLine("Journal Program -- Oct. 10th, 2024 ");
     }
 }
