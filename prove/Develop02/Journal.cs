@@ -24,9 +24,10 @@ class Journal
             Console.WriteLine("3. Save Entry ");
             Console.WriteLine("4. Load journal");
             Console.WriteLine("5. Exit Program ");
-
+/* Parsing input int */
             if (int.TryParse(Console.ReadLine(), out int choice))
             {
+/* Switch case option menu */
                 switch(choice)
                 {
                     case 1:
@@ -45,15 +46,18 @@ class Journal
                     case 5:
                         running = false;
                         break;
+
+/* Error checking */
                     default:
                         Console.WriteLine(" Please enter valid option [1, etc] ");
                         break;
-
                 }
 
             }
-
-
+            else
+            {
+                Console.WriteLine("Please enter valid input ");
+            }
         }
     }
 
