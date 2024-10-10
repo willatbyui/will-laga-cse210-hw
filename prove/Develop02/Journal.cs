@@ -47,7 +47,7 @@ class Journal
                         running = false;
                         break;
 
-/* Error checking */
+/* Error checking / validation */
                     default:
                         Console.WriteLine(" Please enter valid option [1, etc] ");
                         break;
