@@ -11,7 +11,6 @@ class Journal
 
     private List<Entry> entries = new List<Entry>();
     private PromptGenerator promptGenerator = new PromptGenerator();
-    private Handler entryHandler = new Handler();
 
 
 /* Menu */
