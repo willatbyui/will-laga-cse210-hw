@@ -1,5 +1,8 @@
 using System.Data;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Data.Common;
+using System.Runtime.InteropServices;
 
 
 class Journal
@@ -8,7 +11,7 @@ class Journal
 
     private List<Entry> entries = new List<Entry>();
     private PromptGenerator promptGenerator = new PromptGenerator();
-    
+    private Handler entryHandler = new Handler();
 
 
 /* Menu */
@@ -66,19 +69,52 @@ class Journal
 
     private void NewEntry()
     {
+        Console.WriteLine("Would you like a prompt to get started? (y/n) ");
+        string selectPrompt = Console.ReadLine()?.ToLower();
+        string prompt = string.Empty;
+
+        if (selectPrompt == "y")
+        {
+            prompt = promptGenerator.GetRandomPrompt();
+            Console.WriteLine(prompt);
+        }
+        else
+        {
+            Console.WriteLine("Okay, continue without a prompt. ");
+
+
+        }
+
+        string response = Console.ReadLine();
+        string date = DateTime.Now.ToString("dd/mm/yyyy");
+        Console.WriteLine("Entry added");
+
+
 
     }
     private void DisplayEntry()
     {
-
+        if (entries.Count == 0)
+        {
+            Console.WriteLine("No entries entered. ");
+            return;
+        }
+        foreach (var entry in entries)
+        {
+            Console.WriteLine(entry);
+        }
     }
     private void SaveEntry()
     {
-
+        Console.WriteLine("Please name your save file. ");
+        string filename = Console.ReadLine();
+        Handler.SaveToFile(entries, filename);
     }
     private void LoadEntry()
     {
-        
+        Console.WriteLine("Enter file name to load. ");
+        string filename = Console.ReadLine();
+        entries = entryHandler.LoadFromFile(filename);
     }
 
 
