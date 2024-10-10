@@ -85,8 +85,13 @@ class Journal
 
         }
 
+        Console.WriteLine("Write your entry: ");
         string response = Console.ReadLine();
-        string date = DateTime.Now.ToString("dd/mm/yyyy");
+        string date = DateTime.Now.ToString("MM/dd/yyyy");
+        Entry newEntry = new Entry(date, prompt, response);
+        entries.Add(newEntry);
+
+        
         Console.WriteLine("Entry added");
 
 
