@@ -25,12 +25,10 @@ class Entry
 
     public static void SaveToFile(List<Entry> entries, string filename)
     {
-        using(StreamWriter writer = new StreamWriter(filename))
+        List<string> lines = new List<string>();
+        foreach (var entry in entries)
         {
-            foreach (var entry in entries)
-            {
-                writer.WriteLine(entry);
-            }
+            lines.Add(entry.ToString());
         }
         Console.WriteLine("journal saved. ");
     }
