@@ -64,6 +64,23 @@ class Journal
 
 
 
+    private void NewEntry()
+    {
+
+    }
+    private void DisplayEntry()
+    {
+
+    }
+    private void SaveEntry()
+    {
+
+    }
+    private void LoadEntry()
+    {
+        
+    }
+
 
 
 
