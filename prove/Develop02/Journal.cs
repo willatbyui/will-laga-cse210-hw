@@ -1,8 +1,8 @@
-using System.Data;
+using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Data.Common;
-using System.Runtime.InteropServices;
+using System.IO;
+
+
 
 
 class Journal
@@ -91,7 +91,7 @@ class Journal
         Entry newEntry = new Entry(date, prompt, response);
         entries.Add(newEntry);
 
-        
+
         Console.WriteLine("Entry added");
 
 
@@ -113,13 +113,13 @@ class Journal
     {
         Console.WriteLine("Please name your save file. ");
         string filename = Console.ReadLine();
-        Handler.SaveToFile(entries, filename);
+        Entry.SaveToFile(entries, filename);
     }
     private void LoadEntry()
     {
         Console.WriteLine("Enter file name to load. ");
         string filename = Console.ReadLine();
-        entries = entryHandler.LoadFromFile(filename);
+        entries = Entry.LoadFromFile(filename);
     }
 
 
