@@ -56,7 +56,7 @@ class Journal
         }
     }
 
-    private void NewEntry()
+    public void NewEntry()
     {
         Console.WriteLine("Would you like a prompt to get started? (y/n) ");
         string selectPrompt = Console.ReadLine()?.ToLower();
@@ -81,7 +81,7 @@ class Journal
         Console.WriteLine("Entry added");
     }
 
-    private void DisplayEntry()
+    public void DisplayEntry()
     {
         if (entries.Count == 0)
         {
@@ -94,14 +94,14 @@ class Journal
         }
     }
 
-    private void SaveEntry()
+    public void SaveEntry()
     {
         Console.WriteLine("Please name your save file: ");
         string filename = Console.ReadLine();
         Entry.SaveToFile(entries, filename);
     }
 
-    private void LoadEntry()
+    public void LoadEntry()
     {
         Console.WriteLine("Enter file name to load: ");
         string filename = Console.ReadLine();
