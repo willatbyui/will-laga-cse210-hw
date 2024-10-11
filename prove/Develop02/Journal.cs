@@ -106,5 +106,6 @@ class Journal
         Console.WriteLine("Enter file name to load: ");
         string filename = Console.ReadLine();
         entries = Entry.LoadFromFile(filename);
+        DisplayEntry();
     }
 }
