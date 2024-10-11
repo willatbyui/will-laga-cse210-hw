@@ -1,21 +1,18 @@
-using System.Data;
+using System;
 using System.Collections.Generic;
-
+using System.IO;
 
 class Entry
 {
+    public string Date { get; }
+    public string Prompt { get; }
+    public string Response { get; }
 
-
-
-    public string Prompt {get;}
-    public string Response {get;}
-    public string Date {get;}
-
-    public Entry(string prompt, string response, string date)
+    public Entry(string date, string prompt, string response)
     {
+        Date = date;
         Prompt = prompt;
         Response = response;
-        Date = date;
     }
 
     public override string ToString()
@@ -30,7 +27,8 @@ class Entry
         {
             lines.Add(entry.ToString());
         }
-        Console.WriteLine("journal saved. ");
+        File.WriteAllLines(filename, lines);
+        Console.WriteLine("Journal saved.");
     }
 
     public static List<Entry> LoadFromFile(string filename)
@@ -52,15 +50,7 @@ class Entry
                 entries.Add(new Entry(parts[0].Trim(), parts[1].Trim(), parts[2].Trim()));
             }
         }
-        Console.WriteLine("Entry Loaded successfully. ");
+        Console.WriteLine("Entries loaded successfully.");
         return entries;
     }
-
-
-
-
-
-
-
-
 }

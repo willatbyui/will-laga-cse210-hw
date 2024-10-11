@@ -1,19 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-
-
-
 
 class Journal
 {
-
-
     private List<Entry> entries = new List<Entry>();
     private PromptGenerator promptGenerator = new PromptGenerator();
 
-
-/* Menu */
+    /* Menu */
     public void StartMenu()
     {
         bool running = true;
@@ -26,16 +19,17 @@ class Journal
             Console.WriteLine("3. Save Entry ");
             Console.WriteLine("4. Load journal");
             Console.WriteLine("5. Exit Program ");
-/* Parsing input int */
+
+            /* Parsing input int */
             if (int.TryParse(Console.ReadLine(), out int choice))
             {
-/* Switch case option menu */
-                switch(choice)
+                /* Switch case option menu */
+                switch (choice)
                 {
                     case 1:
                         NewEntry();
                         break;
-                    
+
                     case 2:
                         DisplayEntry();
                         break;
@@ -49,12 +43,11 @@ class Journal
                         running = false;
                         break;
 
-/* Error checking / validation */
+                    /* Error checking / validation */
                     default:
-                        Console.WriteLine(" Please enter valid option [1, etc] ");
+                        Console.WriteLine("Please enter valid option [1, etc]");
                         break;
                 }
-
             }
             else
             {
@@ -62,9 +55,6 @@ class Journal
             }
         }
     }
-
-
-
 
     private void NewEntry()
     {
@@ -79,9 +69,7 @@ class Journal
         }
         else
         {
-            Console.WriteLine("Okay, continue without a prompt. ");
-
-
+            Console.WriteLine("Okay, continue without a prompt.");
         }
 
         Console.WriteLine("Write your entry: ");
@@ -90,17 +78,14 @@ class Journal
         Entry newEntry = new Entry(date, prompt, response);
         entries.Add(newEntry);
 
-
         Console.WriteLine("Entry added");
-
-
-
     }
+
     private void DisplayEntry()
     {
         if (entries.Count == 0)
         {
-            Console.WriteLine("No entries entered. ");
+            Console.WriteLine("No entries entered.");
             return;
         }
         foreach (var entry in entries)
@@ -108,19 +93,18 @@ class Journal
             Console.WriteLine(entry);
         }
     }
+
     private void SaveEntry()
     {
-        Console.WriteLine("Please name your save file. ");
+        Console.WriteLine("Please name your save file: ");
         string filename = Console.ReadLine();
         Entry.SaveToFile(entries, filename);
     }
+
     private void LoadEntry()
     {
-        Console.WriteLine("Enter file name to load. ");
+        Console.WriteLine("Enter file name to load: ");
         string filename = Console.ReadLine();
         entries = Entry.LoadFromFile(filename);
     }
-
-
-
 }
