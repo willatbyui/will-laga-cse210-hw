@@ -8,42 +8,25 @@ class Program
 /* Welcome message, menu selections display */
         Console.WriteLine("Welcome to the scripture memorization program, developed by Will");
 
-        Console.WriteLine("Please select a scripture to practice: ");
-        Console.WriteLine("1. Proverbs 3: 5-6.");
-        Console.WriteLine("2. Philippians 4:13. ");
-        Console.WriteLine("3. Alma 7:11-12. ");
-        Console.WriteLine("Enter 'quit' to exit the program. ");
-/* read user input */
+        Console.WriteLine("Press the enter key to start the sequence or type 'quit' to close the program... ");
+/* create a loop that starts program if enter is pressed and exit upon typing quit */
         string input = Console.ReadLine();
+        bool runScripture = input != "quit";
 
-/* detect input and set lowercase */
-        if (input.ToLower() == "quit")
+/* if statement to run method */
+        if (runScripture)
         {
-            return;
-        }
-
-/* Check inputs (1-3, Exit) */
-        Scriptures scripture;
-        if (input == "1")
-        {
-
-        }
-
-        else if (input =="2")
-        {
-
-        }
-        else if (input == "3")
-        {
-
-        }
-
-/* Close program if menu selection is invalild */
-        else
-        {
-            Console.WriteLine("Invalid selection. Closing program now. ");
-            return;
+                Scriptures.DisplayScriptures();
+                while (Scriptures.HideWords())
+                {
+                        input = Console.ReadLine();
+                        if (input == "quit")
+                        {
+                                break;
+                        }
+                }
         }
 
     }
+
 }
