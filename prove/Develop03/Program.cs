@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        /* initialize */
         ScriptureRepo repository = new ScriptureRepo();
         
         Random random = new Random();
@@ -14,10 +15,10 @@ class Program
         var (reference, text) = repository.GetScripture(randomKey);
 
         Scriptures scripture = new Scriptures(reference, text);
-
+/* welcome message */
         Console.WriteLine(" Welcome to Will\'s scripture memorizing program. ");
         Console.WriteLine("Press the enter key to start or type 'quit' to exit the program. ");
-
+/* while loop to run program unless quit */
         while (true)
         {
             string input = Console.ReadLine();
