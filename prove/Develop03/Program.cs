@@ -8,7 +8,7 @@ class Program
         ScriptureRepo repository = new ScriptureRepo();
 
         /* Get the scripture */
-        var (reference, scriptureText) = repository.GetScripture("Philippians 4:13"); // Example key
+        var (reference, scriptureText) = repository.GetScripture("Philippians 4:13"); 
 
         if (reference == null)
         {
