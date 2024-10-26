@@ -4,9 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        /* Create a reference and scripture text */
-        Reference reference = new Reference("Philippians", "4", "13"); 
-        string scriptureText = "I can do all things through Christ which strengtheneth me.";
+        /* Create a repository for scriptures */
+        ScriptureRepo repository = new ScriptureRepo();
+
+        /* Get the scripture */
+        var (reference, scriptureText) = repository.GetScripture("Philippians 4:13"); // Example key
+
+        if (reference == null)
+        {
+            Console.WriteLine("Scripture not found.");
+            return;
+        }
 
         /* Initialize scripture object */
         Scriptures scripture = new Scriptures(reference, scriptureText);
