@@ -20,6 +20,10 @@ public class ScriptureRepo
         scriptures.Add("2 Nephi 2:25", (new Reference("2 Nephi", "2", "25"), "Adam fell that men might have joy."));
 
     }
+    public List<string> GetAllKeys()
+    {
+        return new List<string>(scriptures.Keys);
+    }
 
     public (Reference, string) GetScripture(string key)
     {

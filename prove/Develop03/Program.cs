@@ -1,23 +1,23 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        /* Create a repository for scriptures */
+        // Initialize the ScripturesRepository
         ScriptureRepo repository = new ScriptureRepo();
+        
+        // Get a random scripture from the repository
+        Random random = new Random();
+        List<string> keys = new List<string>(repository.GetAllKeys());
+        string randomKey = keys[random.Next(keys.Count)];
 
-        /* Get the scripture */
-        var (reference, scriptureText) = repository.GetScripture("Philippians 4:13"); 
+        // Retrieve the reference and text for the random scripture
+        var (reference, text) = repository.GetScripture(randomKey);
 
-        if (reference == null)
-        {
-            Console.WriteLine("Scripture not found.");
-            return;
-        }
-
-        /* Initialize scripture object */
-        Scriptures scripture = new Scriptures(reference, scriptureText);
+        // Initialize Scriptures object with the random scripture
+        Scriptures scripture = new Scriptures(reference, text);
 
         Console.WriteLine(" Welcome to Will\'s scripture memorizing program. ");
         Console.WriteLine("Press the enter key to start or type 'quit' to exit the program. ");
@@ -25,7 +25,7 @@ class Program
         while (true)
         {
             string input = Console.ReadLine();
-            
+
             if (input == "quit")
             {
                 break;
@@ -36,7 +36,7 @@ class Program
                 scripture.HideRandom();
                 scripture.Display();
 
-                /* Check if all words are hidden then end program */
+                /* check if all words are hidden then end program */
                 if (scripture.AllHidden())
                 {
                     Console.WriteLine(" All words are hidden, nice job. The Program will now end... ");
