@@ -30,9 +30,13 @@ public class Scriptures
 
     public void HideRandom()
     {
-        Random random = new Random();
-        int index = random.Next(words.Count);
-        words[index].Hide();
+        // Only attempt to hide a word if not all are already hidden
+        if (!AllHidden())
+        {
+            Random random = new Random();
+            int index = random.Next(words.Count);
+            words[index].Hide();
+        }
     }
 
     public bool AllHidden()

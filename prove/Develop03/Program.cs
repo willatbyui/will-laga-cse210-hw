@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         /* Create a reference and scripture text */
-        Reference reference = new Reference("Philippians", "4", "13");
+        Reference reference = new Reference("Philippians", "4", "13"); 
         string scriptureText = "I can do all things through Christ which strengtheneth me.";
 
         /* Initialize scripture object */
